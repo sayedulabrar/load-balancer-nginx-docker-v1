@@ -11,6 +11,8 @@ sudo apt install nginx -y
 # Backup existing Nginx configuration file
 sudo cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.backup
 
+sudo unlink /etc/nginx/sites-enabled/default
+
 # Replace Nginx configuration with the provided setup
 cat << 'EOL' | sudo tee /etc/nginx/nginx.conf
 user www-data;
